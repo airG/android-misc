@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+
+apply from: "$rootDir/version.gradle"
+apply from: "$rootDir/dependencies.gradle"
+
+logger.quiet("android-misc-$VERSION_NAME ($VERSION_CODE)")
+
+ext {
+	bintrayOrg = 'airgoss'
+    bintrayRepo = 'airGOss'
+    bintrayName = 'misc'
+
+    publishedGroupId = 'com.airg.android'
+    libraryName = 'Miscellaneous Android Utilities'
+    artifact = 'misc'
+
+    libraryDescription = 'Data structures and Utilities for checksum calculation, compression, and decompression.'
+
+    siteUrl = 'https://github.com/airG/android-misc'
+    gitUrl = 'https://github.com/airG/android-misc.git'
+
+    libraryVersion = VERSION_NAME
+
+    developerId = 'airgoss'
+    developerName = 'airG OpenSource'
+    developerEmail = 'opensource@airg.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    // do not modify. These fields are auto generated in dependencies.gradle
+    compileSdkVersion COMPILE_SDK_VERSION
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        // do not modify. These fields are auto generated in dependencies.gradle
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion COMPILE_SDK_VERSION
+
+        // do not modify. These fields are auto generated in version.gradle
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+
+        buildConfigField "String", "VCS_BRANCH", "\"$VCS_BRANCH\""
+        buildConfigField "String", "VCS_REVISION", "\"$VCS_REVISION\""
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'org.projectlombok:lombok:1.16.10'
+    compile "com.android.support:support-annotations:$SUPPORT_LIB_VERSION"
+    testCompile 'junit:junit:4.12'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    annotationProcessor 'org.projectlombok:lombok:1.16.10'
+}
+
+apply from: 'https://raw.githubusercontent.com/airG/JCenter/master/install.gradle'
+apply from: 'https://raw.githubusercontent.com/airG/JCenter/master/bintray.gradle'
