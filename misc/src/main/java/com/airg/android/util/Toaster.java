@@ -162,7 +162,7 @@ public final class Toaster {
 
     @TargetApi(Build.VERSION_CODES.M)
     private static boolean isMainThread () {
-        return Build.VERSION_CODES.M >= Build.VERSION.SDK_INT
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
                 ? Looper.getMainLooper ().isCurrentThread ()
                 : Looper.myLooper () == Looper.getMainLooper ();
     }
