@@ -3,6 +3,8 @@
 #Miscellaneous Android Utilities
 The airG android 'misc' library is a group of utilities for easier checksum calculation, compression, and decompression as well some utility types. 
 
+`compile 'com.airg.android:misc:+@aar'`
+
 ##ArrayHash
 The `ArrayHash` data structure is a HashMap that preserves insertion order, allowing for fast random as well as sequential lookup.
 
