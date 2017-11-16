@@ -36,6 +36,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * Compression and decompression methods via <code>gzip</code>
+ *
  * @author Mahram Z. Foadi
  */
 @SuppressWarnings({"UnusedDeclaration", "WeakerAccess", "TryFinallyCanBeTryWithResources"})
@@ -46,7 +47,8 @@ public final class Zipper {
 
     /**
      * Compress a given file into another
-     * @param original Input file (uncompressed)
+     *
+     * @param original   Input file (uncompressed)
      * @param compressed Output file (compressed)
      * @throws IOException If unable to find/read input file or unable to write output file
      */
@@ -62,7 +64,8 @@ public final class Zipper {
 
     /**
      * Compress the contents of a stream and write to another. This method <b>does not close</b> either stream.
-     * @param in Input stream (uncompressed)
+     *
+     * @param in  Input stream (uncompressed)
      * @param out Output stream (compressed)
      * @throws IOException if unable to read/write either stream
      */
@@ -84,6 +87,7 @@ public final class Zipper {
 
     /**
      * Compress a string
+     *
      * @param string Input string (uncompressed)
      * @return Compressed string bytes
      * @throws IOException if unable to write to compressed stream
@@ -97,13 +101,13 @@ public final class Zipper {
         bos.flush();
         bos.close();
         return bos.toByteArray();
-
     }
 
     /**
      * Decompress a file into another
+     *
      * @param compressed input file (compressed)
-     * @param output output file (decompressed)
+     * @param output     output file (decompressed)
      * @throws IOException if unable to read or write
      */
     public static void gunzip(final File compressed, final File output) throws IOException {
@@ -116,7 +120,8 @@ public final class Zipper {
 
     /**
      * Decompress the contents of a stream and write to another. This method <b>does not close</b> either stream.
-     * @param in Input stream (compressed)
+     *
+     * @param in  Input stream (compressed)
      * @param out Output stream (decompressed)
      * @throws IOException If unable to read/write
      */
@@ -138,6 +143,7 @@ public final class Zipper {
 
     /**
      * Unzip an array of compressed bytes
+     *
      * @param cmopressed byte array input (compressed)
      * @return decompressed byte array
      * @throws IOException if unable to read/write
