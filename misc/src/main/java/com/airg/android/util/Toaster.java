@@ -27,6 +27,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.widget.Toast;
 
+import static android.os.Build.VERSION_CODES.M;
 import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.LENGTH_SHORT;
 
@@ -160,9 +161,9 @@ public final class Toaster {
         });
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
+    @TargetApi(M)
     private static boolean isMainThread () {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+        return Build.VERSION.SDK_INT >= M
                 ? Looper.getMainLooper ().isCurrentThread ()
                 : Looper.myLooper () == Looper.getMainLooper ();
     }
