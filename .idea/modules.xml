@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/misc/misc.iml" filepath="$PROJECT_DIR$/misc/misc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/oss-misc.iml" filepath="$PROJECT_DIR$/oss-misc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-misc.iml" filepath="$PROJECT_DIR$/.idea/modules/android-misc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/misc/android-misc.misc.iml" filepath="$PROJECT_DIR$/.idea/modules/misc/android-misc.misc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/android-misc.sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/android-misc.sample.iml" />
     </modules>
   </component>
 </project>
